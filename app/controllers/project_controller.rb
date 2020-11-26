@@ -1,6 +1,6 @@
 class ProjectController < ApplicationController
 
- 
+  before_filter :authenticate_user!
     
 #Project Create Function
   def create

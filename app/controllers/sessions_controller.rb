@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-
+  
     def create 
       customer = Customer.find_by(email: login_params[:email])
       if customer && customer.authenticate(login_params[:password])
