@@ -29,9 +29,10 @@ Rails.application.routes.draw do
 
   #loggin out customers
   #delete "/loggedout" => "sessions#destroy"
-  get "/loggedout" => "sessions#logout"
+  get "/sessions" => "sessions#destroy"
   #logged out engineers
   delete "/loggedoute" => "sessionsengineer#destroy"
+  
   
 
 
