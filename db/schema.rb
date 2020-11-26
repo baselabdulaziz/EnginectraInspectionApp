@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201126015210) do
+ActiveRecord::Schema.define(version: 20201126211248) do
 
   create_table "customers", primary_key: "customer_id", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
     t.string "email"
@@ -30,7 +30,8 @@ ActiveRecord::Schema.define(version: 20201126015210) do
   end
 
   create_table "projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
-    t.string "engineer_id"
+    t.bigint "engineer_id"
+    t.bigint "customer_id"
     t.string "Project_number"
     t.string "Project_scope"
     t.string "Elect_name"
@@ -44,7 +45,8 @@ ActiveRecord::Schema.define(version: 20201126015210) do
     t.string "Fp_representative"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "customer_id"
+    t.index ["customer_id"], name: "index_projects_on_customer_id"
+    t.index ["engineer_id"], name: "index_projects_on_engineer_id"
   end
 
 end

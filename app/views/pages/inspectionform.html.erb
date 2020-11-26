@@ -1,58 +1,54 @@
 
+<head>
 <script>
-function scopelettergenerator(){
-
-var mainWork = document.getElementById(#projectwork)
-var nameIC = document.getElementById(#nameIC)
-var addressIC = document.getElementById(#addressIC)
-var nameESC = document.getElementById(#nameESC)
-var addressESC = document.getElementById(#addressESC)
-var emailESC = document.getElementById(#emailESC)
-var nameFPC = document.getElementById(#nameFPC)
-var repnameFPC = document.getElementById(#repnameFPC)
-var addressFPC = document.getElementById(#addressFPC)
-var emailFPC = document.getElementById(#emailFPC)
-var jobnumberFPC = document.getElementById(#jobnumberFPC)
-var task1 = document.getElementById(#task1)
-var task2 = document.getElementById(#task2)
-var task3 = document.getElementById(#task3)
-var task4 = document.getElementById(#task4)
-var task5 = document.getElementById(#task5)
-var task6 = document.getElementById(#task6)
-var task7 = document.getElementById(#task7)
-
-let currentDate = new Date();
-let cDay = currentDate.getDate();
-let cMonth = currentDate.getMonth();
-let cYear = currentDate.getFullYear();
-var date = cDay + "/" + cMonth + "/" + cYear 
-
-
-
-var DOCSPRINGJSON = {"main work": mainWork, "name IC":nameIC, "address IC":addressIC ,"name ESC":nameESC , 
-"address ESC":addressESC , "email ESC":emailESC , "name FPC":nameFPC , "repname FPC":repnameFPC ,
-"address FPC":addressFPC, "email FPC":emailFPC, "jobnumber FPC":jobnumberFPC , "task 1":task1, "task 2":task2 ,"task 3":task3,"task 4":task4,
-"task 5":task5,"task 6":task6,"task 7":task7 , "date":date , "date2":date , "date3":date}
-
-
-
-$.ajax({
-            type: 'POST', 
-            Authorization: Basic AZXs3qhcdXSmqtqJM9dzjcLGjLGhxQCJChdfchj2yA
-            url: 'https://api.docspring.com/api/v1/templates/<tpl_Mz9gqPxyRT2PbRraAn>/submissions',
-            data: JSON.stringify(DOCSPRINGJSON),
-            contentType: 'application/json; charset=utf-8',
-            dataType: 'json'
-            test: true
-            
-      
-        });
-
+function pscopelettergenerator() {
+    var mainWork = document.getElementById(#projectwork)
+    var nameIC = document.getElementById(#nameIC)
+    var addressIC = document.getElementById(#addressIC)
+    var nameESC = document.getElementById(#nameESC)
+    var addressESC = document.getElementById(#addressESC)
+    var emailESC = document.getElementById(#emailESC)
+    var nameFPC = document.getElementById(#nameFPC)
+    var repnameFPC = document.getElementById(#repnameFPC)
+    var addressFPC = document.getElementById(#addressFPC)
+    var emailFPC = document.getElementById(#emailFPC)
+    var jobnumberFPC = document.getElementById(#jobnumberFPC)
+    var task1 = document.getElementById(#task1)
+    var task2 = document.getElementById(#task2)
+    var task3 = document.getElementById(#task3)
+    var task4 = document.getElementById(#task4)
+    var task5 = document.getElementById(#task5)
+    var task6 = document.getElementById(#task6)
+    var task7 = document.getElementById(#task7)
+    let currentDate = new Date();
+    let cDay = currentDate.getDate();
+    let cMonth = currentDate.getMonth();
+    let cYear = currentDate.getFullYear();
+    let Inspecdate = cDay + "/" + cMonth + "/" + cYear
+    let DOCSPRINGJSON2 = {"main work": mainWork, "name IC":nameIC, "address IC":addressIC ,"name ESC":nameESC , 
+    "address ESC":addressESC , "email ESC":emailESC , "name FPC":nameFPC , "repname FPC":repnameFPC ,
+    "address FPC":addressFPC, "email FPC":emailFPC, "jobnumber FPC":jobnumberFPC , "task 1":task1, "task 2":task2 ,"task 3":task3,"task 4":task4,
+    "task 5":task5,"task 6":task6,"task 7":task7 , "date":date , "date2":date , "date3":Inspecdate}
+    let DOCSPRINGJSON1 = {
+        "data": DOCSPRINGJSON2,
+        "test": true
+    };
+    let DOCSPRINGJSON3 = JSON.stringify(DOCSPRINGJSON1);
+    let iFsLpackage = new XMLHttpRequest();
+    iFsLpackage.open('POST', 'https://api.docspring.com/api/v1/templates/tpl_Mz9gqPxyRT2PbRraAn/submissions')
+    iFsLpackage.setRequestHeader('Authorization', 'Basic YXBpX2R4Q1M5TEhhenFjRzRrajVacDpBWlhzM3FoY2RYU21xdHFKTTlkempjTEdqTEdoeFFDSkNoZGZjaGoyeUE=')
+    iFsLpackage.send(DOCSPRINGJSON3);
+    var ltstdonecust = "Submitted Inspection Request";
+    var ltstnextcust = "Review Scope Letter and Suggest Changes to Engineer -- Or Approve it if it looks good";
+    document.getElementById("lttdonecust").innerHTML = ltstdonecust;
+    document.getElementById("lttnextcust").innerHTML = ltstnextcust;
+    window.sessionStorage.setItem('lttnextcust') = ltstnextcust;
+    window.sessionStorage.setItem('lttdonecust') = ltstdonecust;
 }
-
-
 </script>
 
+
+</head>
 
 
 
@@ -187,7 +183,7 @@ $.ajax({
     <input type="text" class="form-control" id="task7" placeholder="Task 7"><br>
     </div>
 
-    <input type="submit" name= "submit" class="btn btn-primary submit" onclick ="scopelettergenerator()" >
+    <input type="submit" name= "submit" class="btn btn-primary submit" onclick ="pscopelettergenerator()" >
     </div>
 </div>
 </div>

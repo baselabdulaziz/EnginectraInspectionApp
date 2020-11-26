@@ -5,7 +5,7 @@ class ProjectController < ApplicationController
 #Project Create Function
   def create
 
-    project = Project.new(project_params.merge({customer_id: current_user.id})) 
+    project = Project.new(project_params.merge({customer_id: current_user.id}.merge({engineer_id: default_engineer.id}))) 
     if project.save
       
       session[:project_id] = project.id
@@ -26,6 +26,11 @@ class ProjectController < ApplicationController
   private
   def current_user
     @current_user ||= Customer.find(session[:customer_id]) if session[:customer_id]
+  end
+
+  private
+  def default_engineer
+    @default_engineer||= Engineer.find(1)
   end
 
 

@@ -1,3 +1,5 @@
 class Project < ApplicationRecord
-   #belongs_to :customer, :counter_cache => false
+   belongs_to :customer
+   belongs_to :engineer
+
 end
