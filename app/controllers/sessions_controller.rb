@@ -17,11 +17,11 @@ class SessionsController < ApplicationController
           params.require(:login).permit(:email, :password)
       end
 
-    def destroy
+  def logout
         session[:customer_id] = nil
         flash[:session] = "You have logged out"
         redirect_to '/index'
-    end
+  end
 
 
     def index

@@ -26,6 +26,12 @@ Rails.application.routes.draw do
 
   #create project
   post "/custdashboard" => "project#create"
+
+  #loggin out customers
+  #delete "/loggedout" => "sessions#destroy"
+  get "/loggedout" => "sessions#logout"
+  #logged out engineers
+  delete "/loggedoute" => "sessionsengineer#destroy"
   
 
 

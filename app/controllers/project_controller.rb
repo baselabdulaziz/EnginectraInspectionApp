@@ -5,15 +5,15 @@ class ProjectController < ApplicationController
 #Project Create Function
   def create
 
-    project = Project.new(project_params.merge({customerID: current_user.id}) 
-    rails if project.save
+    project = Project.new(project_params.merge({customer_id: current_user.id})) 
+    if project.save
       
       session[:project_id] = project.id
 
       redirect_to '/custdashboard'
     else 
       flash[:register_errors] = project.errors.full_messages
-      redirect_to '/inspctionform'
+      redirect_to '/inspectionform'
     end
   end
 

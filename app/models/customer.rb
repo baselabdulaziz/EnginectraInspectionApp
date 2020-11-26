@@ -1,7 +1,7 @@
 class Customer < ActiveRecord::Base
 
   #One to many relationship between customers and project
-  has_many :projects, :dependent => :destroy
+  #has_many :projects, :dependent => :destroy
   belongs_to :engineers, :counter_cache => true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },

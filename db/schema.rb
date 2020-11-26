@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201125010255) do
+ActiveRecord::Schema.define(version: 20201126015210) do
 
-  create_table "customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
+  create_table "customers", primary_key: "customer_id", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
     t.string "email"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "engineers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
+  create_table "engineers", primary_key: "engineer_id", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
     t.string "email"
     t.string "password_digest"
     t.string "active_projects"
@@ -30,8 +30,7 @@ ActiveRecord::Schema.define(version: 20201125010255) do
   end
 
   create_table "projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
-    t.string "EngineerID"
-    t.string "CustomerID"
+    t.string "engineer_id"
     t.string "Project_number"
     t.string "Project_scope"
     t.string "Elect_name"
@@ -45,6 +44,7 @@ ActiveRecord::Schema.define(version: 20201125010255) do
     t.string "Fp_representative"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "customer_id"
   end
 
 end
