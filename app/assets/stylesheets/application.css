@@ -27,10 +27,7 @@
     background-color: #A3B15A;
   }
 
-  mark {
-    background-color: rgb(194, 163, 230);
-    color: rgb(3, 5, 31);
-  }
+ 
 
   /*hide role-specific div html*/
   div.engineer, div.customer{
