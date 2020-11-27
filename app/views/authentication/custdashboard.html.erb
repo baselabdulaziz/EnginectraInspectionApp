@@ -16,6 +16,18 @@ if (current_user){
      &nbsp &nbsp &nbsp &nbsp &nbsp
     <a href="/inspectionform" class="btn btn-secondary" style="text-align: center">Create New Inspection Form</a>
     &nbsp &nbsp &nbsp &nbsp &nbsp
+    <%=form_with do |f| %>
+    <%=f.label :projects_id, "Choose a Project"%>
+    <%=collection_select(:project, :fp_name, Project.all, :id, :customer_id, prompt: true) %>
+    
+   
+    
+
+    <% end %>
+
+
+
+
     <div class="dropdown" style="text-align: center">
       <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" style="text-align: center">
     Choose Project
