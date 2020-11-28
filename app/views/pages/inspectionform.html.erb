@@ -40,10 +40,10 @@ function pscopelettergenerator() {
     iFsLpackage.send(DOCSPRINGJSON3);
     var ltstdonecust = "Submitted Inspection Request";
     var ltstnextcust = "Review Scope Letter and Suggest Changes to Engineer -- Or Approve it if it looks good";
-    document.getElementById("lttdonecust").innerHTML = ltstdonecust;
-    document.getElementById("lttnextcust").innerHTML = ltstnextcust;
-    window.sessionStorage.setItem('lttnextcust') = ltstnextcust;
-    window.sessionStorage.setItem('lttdonecust') = ltstdonecust;
+    document.getElementById("lttdonecust").innerHTML = ltstdonecust1;
+    document.getElementById("lttnextcust").innerHTML = ltstnextcust1;
+    window.sessionStorage.setItem('lttnextcust1') = ltstnextcust2;
+    window.sessionStorage.setItem('lttdonecust1') = ltstdonecust2;
 }
 </script>
 
@@ -187,4 +187,7 @@ function pscopelettergenerator() {
     </div>
 </div>
 </div>
+
+<input type=“hidden” id= “lttdonecust”>
+<input type=“hidden” id= “lttnextcust”>
 

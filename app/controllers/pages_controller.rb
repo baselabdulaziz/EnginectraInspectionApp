@@ -1,29 +1,22 @@
 class PagesController < ApplicationController
-def index
+  def index
+  end
 
-end
+  def about
+  end
 
-def about
-end
+  def engineer  
+  end
 
-def engineer
-   
-end
+  def admin
+  end
 
-def admin
-end
+  def singupc
+  end
 
-def singupc
-end
+  def singinc  
+  end
 
-# def singupe
-# end
-
-def singinc
-  
-end
-
-def inspectionform
-end
-
+  def inspectionform
+  end
 end

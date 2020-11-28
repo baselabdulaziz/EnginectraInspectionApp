@@ -1,27 +1,20 @@
 class AuthenticationController < ApplicationController
-    def singupc
-    end
-    
-    # def singine
-    # end
+  def singupc
+  end
 
-    def custdashboard
-    end
+  def custdashboard
+  end
 
-    def custchecklist
-    end
+  def custchecklist
+  end
 
+  def index
+  end
 
+  def inspectionform
+  end
 
-  
-
-    def index
-    end
-
-    def inspectionform
-    end
-
-#Customer Create Function
+  #Customer Create Function
   def create
     customer = Customer.new(customer_params) 
     if customer.save
@@ -37,8 +30,6 @@ class AuthenticationController < ApplicationController
   def customer_params
     params.require(:customer).permit(:email, :password, :password_confirmation)
   end
-
-
 end 
 
     
