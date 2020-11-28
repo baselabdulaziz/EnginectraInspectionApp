@@ -12,7 +12,14 @@ document.getElementById("lttnextcust").innerHTML = ltstnextcust
 //  $("div.customer").show();
 // }
 
+
 </script>
+
+<% def current_user
+    @current_user ||= Customer.find(session[:customer_id]) if session[:customer_id]
+%>
+<%end%>
+
  <div class="container">
     <div class="jumbotron">
       <h2 style="text-align: center">Welcome to your Dashboard</h2>
@@ -25,7 +32,7 @@ document.getElementById("lttnextcust").innerHTML = ltstnextcust
      &nbsp &nbsp &nbsp &nbsp &nbsp
     <a href="/inspectionform" class="btn btn-secondary" style="text-align: center">Create New Inspection Form</a>
     &nbsp &nbsp &nbsp &nbsp &nbsp
-    <%=form_with do |f| %>
+    <%=form_with  do |f| %>
     <%=f.label :projects_id, "Choose a Project"%>
     <%=collection_select(:project, :customer_id, Project.all, :id, :customer_id, prompt: true) %>
     
