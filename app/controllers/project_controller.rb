@@ -1,4 +1,5 @@
-class ProjectController < ApplicationController   
+class ProjectController < ApplicationController 
+
 #Project Create Function
   def create
     project = Project.new(project_params.merge({customer_id: current_user.id}.merge({engineer_id: default_engineer.id}))) 
@@ -14,7 +15,7 @@ class ProjectController < ApplicationController
   private 
     def project_params
       params.require(:project).permit(:Inspec_name, :Inspec_address, :Elect_name, :Elect_address,
-      :Elect_email, :fp_name, :Fp_representative, :fp_address, :fp_email, :Project_scope)
+      :Elect_email, :fp_name, :Fp_representative, :fp_address, :fp_email, :Project_scope, :Project_number)
     end
 
   private

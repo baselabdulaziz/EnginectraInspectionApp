@@ -20,31 +20,29 @@ document.getElementById("lttnextcust").innerHTML = ltstnextcust
 %>
 <%end%>
 
- <div class="container">
+<div class="container">
     <div class="jumbotron">
       <h2 style="text-align: center">Welcome to your Dashboard</h2>
     </div>
 
 
    
-    <div class="form-inline">
+  <div class="form-inline">
     <a href="/custchecklist" class="btn btn-primary" style="text-align: center">Go to Checklist</a>
      &nbsp &nbsp &nbsp &nbsp &nbsp
     <a href="/inspectionform" class="btn btn-secondary" style="text-align: center">Create New Inspection Form</a>
     &nbsp &nbsp &nbsp &nbsp &nbsp
     <%=form_with  do |f| %>
     <%=f.label :projects_id, "Choose a Project"%>
-    <%=collection_select(:project, :customer_id, Project.all, :id, :customer_id, prompt: true) %>
+    <%=collection_select(:project, :customer_id, Project.where(customer_id: current_user.id), :id, :id, prompt: true) %>
     
-    
-    
-
     <% end %>
+  </div>
 
 
 
 
-    <div class="dropdown" style="text-align: center">
+    <%# <div class="dropdown" style="text-align: center">
       <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" style="text-align: center">
     Choose Project
       </button>
@@ -54,38 +52,44 @@ document.getElementById("lttnextcust").innerHTML = ltstnextcust
         <a class="dropdown-item" href="#">Link 3</a>
       </div>
     </div>
-    </div>
+    </div> %>
     
 </div>
 
 <body onload = "myfunc()" >
-<div>
-<div class="form-group">
+  <div class="form-group">
     <label for="Done">Done
     <%# <input type="text" class="form-control"</label> id="lttdonecust" name = " "> %>
     <p id = "lttdonecust"> </p>
   </div>
 
-
-<div class="form-group">
+ 
+  <div class="form-group">
     <label for="Next">Next</label>
     <%# <input type="text" class="form-control" id="lttnextcust" name = " "> %>
     <p id = "lttnextcust"> </p>
   </div>
-  </div>
-  </body>
+
+</body>
+
+  <%# code to display all projects for admin %>
+  <%# <table>
+  <tr>
+    <th>Project Number</th>
+  </tr> %>
+  <%# code todisplay all projects %>
+  <%# <% Project.all.each do |project| %> 
+  <%# code to display project based on customer_id %>
+  <%# <% Project.where(customer_id: current_user.id).find_each do |project|%>
+    <%# <tr>
+      <td><%= project.id %></td>
+ <%# </tr>
+  <% end %>
+<%# </table>  %>
 
     
     
     
-    
-    
-    
-    </div>
-
-
-
-</div>   
 
 
 
