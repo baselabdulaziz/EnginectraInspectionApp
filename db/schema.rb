@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20201127212420) do
   create_table "projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
     t.bigint "engineer_id"
     t.bigint "customer_id"
-    t.bigint "Project_number"
+    t.string "Project_number"
     t.string "Project_scope"
     t.string "Elect_name"
     t.string "Elect_email"

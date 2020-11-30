@@ -5,8 +5,8 @@
     reconnect: false
     database: enginectrainspectionform
     pool: 5
-    username: nativeuser
-    password: password
+    username: root
+    password: 12341234
     socket: /opt/local/var/run/mysql5/mysqld.sock
   test:
     adapter: mysql2
@@ -14,8 +14,8 @@
     reconnect: false
     database: enginectrainspectionform
     pool: 5
-    username: nativeuser
-    password: password
+    username: root
+    password: 12341234
     socket: /opt/local/var/run/mysql5/mysqld.sock
 
   production:
@@ -24,6 +24,6 @@
     reconnect: false
     database: enginectrainspectionform
     pool: 5
-    username: nativeuser
-    password: password
+    username: root
+    password: 12341234
     socket: /opt/local/var/run/mysql5/mysqld.sock

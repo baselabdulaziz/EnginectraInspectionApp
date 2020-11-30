@@ -1,23 +1,40 @@
 
 <head>
 <script>
+
 function pscopelettergenerator() {
+    let mainWork0 = "";
     var mainWork = document.getElementById("projectwork")
+    mainWork0 += mainWork.value;
+    let nameIC0 = "";
     var nameIC = document.getElementById("nameIC")
+    nameIC0 += nameIC.value;
+    let addressIC0 = "";
     var addressIC = document.getElementById("addressIC")
+    addressIC0 += addressIC.value;
     var nameESC = document.getElementById("nameESC")
     var addressESC = document.getElementById("addressESC")
     var emailESC = document.getElementById("emailESC")
     var nameFPC = document.getElementById("nameFPC")
+    let repnameFPC0 = "";
     var repnameFPC = document.getElementById("repnameFPC")
+    repnameFPC0 += repnameFPC.value;
     var addressFPC = document.getElementById("addressFPC")
     var emailFPC = document.getElementById("emailFPC")
     var jobnumberFPC = document.getElementById("jobnumberFPC")
-    var task1 = document.getElementById("task")
+    var task10 = "";
+    var task1 = document.getElementById("task1")
+    task10 += task1.value;
+    let task20 = "";
     var task2 = document.getElementById("task2")
-    var task3 = document.getElementById("task3")
-    var task4 = document.getElementById("task4")
+    task20 += task2.value;
+    let task30 = "";
+    var task3 = document.getElementById("task3")                                                                                                                                task30 += task3.value;
+    let task40 = "";                                                                                                                                                            var task4 = document.getElementById("task4")
+    task40 += task4.value;
+    let task50 = "";
     var task5 = document.getElementById("task5")
+    task50 += task5.value;
     var task6 = document.getElementById("task6")
     var task7 = document.getElementById("task7")
     let currentDate = new Date();
@@ -25,26 +42,27 @@ function pscopelettergenerator() {
     let cMonth = currentDate.getMonth();
     let cYear = currentDate.getFullYear();
     let Inspecdate = cDay + "/" + cMonth + "/" + cYear
-    let DOCSPRINGJSON2 = {"main work": mainWork, "name IC":nameIC, "address IC":addressIC ,"name ESC":nameESC , 
-    "address ESC":addressESC , "email ESC":emailESC , "name FPC":nameFPC , "repname FPC":repnameFPC ,
-    "address FPC":addressFPC, "email FPC":emailFPC, "jobnumber FPC":jobnumberFPC , "task 1":task1, "task 2":task2 ,"task 3":task3,"task 4":task4,
-    "task 5":task5,"task 6":task6,"task 7":task7 , "date":date , "date2":date , "date3":Inspecdate}
-    let DOCSPRINGJSON1 = {
-        "data": DOCSPRINGJSON2,
-        "test": true
-    };
-    let DOCSPRINGJSON3 = JSON.stringify(DOCSPRINGJSON1);
+    let DOCSPRINGJSON2 = {mainwork: mainWork, nameIC: nameIC0, addressIC: addressIC, repnameFPC: repnameFPC, jobnumberFPC: jobnumberFPC,
+task1: task1, task2: task2, task3: task3, task4: task4,
+    task5: task5, date: Inspecdate, date2: Inspecdate, date3: Inspecdate};
+//    let runriver = JSON.stringify(DOCSPRINGJSON2);
+    let DOCSPRINGJSON1 = JSON.stringify({data: {mainwork: mainWork0, nameIC: nameIC0, addressIC: addressIC0, repnameFPC: repnameFPC0,
+task1: task10, task2: task20, task3: task30, task4: task40, task5: task50, date: Inspecdate, date2: Inspecdate, date3: Inspecdate}, test: true});
+//    let DOCSPRINGJSON3 = JSON.stringify(DOCSPRINGJSON1);
+//    let DOCSRPINGJSON4 = JSON.stringify(DOCSPRINGJSON3);
     let iFsLpackage = new XMLHttpRequest();
     iFsLpackage.open('POST', 'https://api.docspring.com/api/v1/templates/tpl_Mz9gqPxyRT2PbRraAn/submissions')
     iFsLpackage.setRequestHeader('Authorization', 'Basic YXBpX2R4Q1M5TEhhenFjRzRrajVacDpBWlhzM3FoY2RYU21xdHFKTTlkempjTEdqTEdoeFFDSkNoZGZjaGoyeUE=')
-    iFsLpackage.send(DOCSPRINGJSON3);
+    iFsLpackage.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+    iFsLpackage.send(DOCSPRINGJSON1);
     var ltstdonecust = "Submitted Inspection Request";
     var ltstnextcust = "Review Scope Letter and Suggest Changes to Engineer -- Or Approve it if it looks good";
-    document.getElementById("lttdonecust").innerHTML = ltstdonecust1;
-    document.getElementById("lttnextcust").innerHTML = ltstnextcust1;
-    window.sessionStorage.setItem('lttnextcust1') = ltstnextcust2;
-    window.sessionStorage.setItem('lttdonecust1') = ltstdonecust2;
+    document.getElementById("lttdonecust").innerHTML = ltstdonecust;
+    document.getElementById("lttnextcust").innerHTML = ltstnextcust;
+    window.sessionStorage.setItem('lttnextcust') = ltstnextcust;
+    window.sessionStorage.setItem('lttdonecust') = ltstdonecust;
 }
+
 </script>
 
 
