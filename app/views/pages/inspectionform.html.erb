@@ -183,10 +183,26 @@ function pscopelettergenerator() {
     <input type="text" class="form-control" id="task7" placeholder="Task 7"><br>
     </div>
 
-    <button type="submit" name= "submit" class="btn btn-primary submit" onclick ="pscopelettergenerator()">submit</button>
+    <button id ="btn1" type="submit" name= "submit" class="btn btn-primary submit" onclick ="pscopelettergenerator()">submit</button>
     </div>
 
 </div>
 </div>
+
+  <input type="hidden" id="test1" name="custId" value="">
+   <input type="hidden" id="test2" name="custId" value="">
+
+<script>
+$(document).ready(function(){
+  $("#btn1").click(function(){
+    $("#test1").val("Submitted Inspection Request");
+     $("#test2").val("Review Scope Letter and Suggest Changes to Engineer -- Or Approve it if it looks good");
+  });
+});
+</script>
+</head>
+<body>
+
+
 
 

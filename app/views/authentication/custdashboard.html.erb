@@ -58,16 +58,18 @@ document.getElementById("lttnextcust").innerHTML = ltstnextcust
 
 <body onload = "myfunc()" >
   <div class="form-group">
-    <label for="Done">Done
-    <%# <input type="text" class="form-control"</label> id="lttdonecust" name = " "> %>
+    <label for="Done">Done </label> 
+    <%# <input type="text" class="form-control" id="lttdonecust" name = " "> %>
     <p id = "lttdonecust"> </p>
+    <%# <p>Done: <input type="text" id="test1" value=" "></p> %>
   </div>
 
  
   <div class="form-group">
-    <label for="Next">Next</label>
-    <%# <input type="text" class="form-control" id="lttnextcust" name = " "> %>
-    <p id = "lttnextcust"> </p>
+    <label for="Next">Next</label> 
+    <%# <input type="text" class="form-control" id="lttnextcust" name = " ">  %>
+    <p id = "lttnextcust"> </p> 
+    <%# <p>Next: <input type="text" id="test2" value=" "></p> %>
   </div>
 
 </body>
@@ -86,6 +88,16 @@ document.getElementById("lttnextcust").innerHTML = ltstnextcust
  <%# </tr>
   <% end %>
 <%# </table>  %>
+
+<script>
+$(document).ready(function(){
+  $("#btn1").click(function(){
+    $("#test1").val("Submitted Inspection Request");
+     $("#test2").val("Review Scope Letter and Suggest Changes to Engineer -- Or Approve it if it looks good");
+  });
+});
+</script>
+
 
     
     
