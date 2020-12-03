@@ -32,8 +32,13 @@ Rails.application.routes.draw do
   get "/sessions" => "sessions#destroy"
   #logged out engineers
   delete "/loggedoute" => "sessionsengineer#destroy"
+
+  #engineer complete profile page
+  get "/engprofile" => "engineer#engprofile"
+  post "/engdashboard" => "engineer#update"
   
   
+
 
 
 

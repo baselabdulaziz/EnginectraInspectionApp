@@ -12,22 +12,27 @@
 
 ActiveRecord::Schema.define(version: 20201127212420) do
 
-  create_table "customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "customers", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "engineers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
+  create_table "engineers", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
-    t.string "seal"
+    t.binary "seal"
+    t.string "fname"
+    t.string "lname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
+  create_table "projects", force: :cascade do |t|
     t.bigint "engineer_id"
     t.bigint "customer_id"
     t.string "Project_number"

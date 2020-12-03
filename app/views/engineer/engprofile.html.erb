@@ -1,0 +1,23 @@
+<% def current_user
+    @current_user ||= Engineer.find(session[:engineer_id]) if session[:engineer_id]
+%>
+<%end%>
+<form action = "/engdashboard" method= "POST">
+<input type="hidden" name= "authenticity_token" value="<%=form_authenticity_token %>">
+<div class="form-group">
+    <label for="fname">First Name</label>
+    <input type="text" class="form-control" id="fname" placeholder="First Name" name = "engineer[fname]">
+  </div>
+  <div class="form-group">
+    <label for="lname">Last Name</label>
+    <input type="text" class="form-control" id="lname" placeholder="Last Name" name = "engineer[lname]">
+  </div>
+    <div class="form-group">
+    <label for="inputAddress">Please Upload Your Seal</label>
+    <input type="file" class="form-control" id="seal" placeholder="Seal" name = "engineer[seal]">
+  </div>
+
+  <input type="submit" name= "submit" class="btn btn-primary submit">
+    
+
+   

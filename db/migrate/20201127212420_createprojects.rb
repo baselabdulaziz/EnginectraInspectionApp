@@ -4,7 +4,9 @@ class Createprojects < ActiveRecord::Migration[5.1]
     create_table :engineers do |t| 
       t.string :email 
       t.string :password_digest
-      t.string :seal
+      t.binary :seal
+      t.string :fname 
+      t.string :lname
       t.timestamps 
     end
     create_table :customers do |t|

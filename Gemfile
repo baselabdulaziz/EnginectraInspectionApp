@@ -10,10 +10,11 @@ end
 gem 'rails', '~> 5.1.7'
 
 gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
-
+gem 'workflow', '~> 1.2'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3' ,  '< 1.4'
 gem 'mysql2' , '~> 0.5.3'
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets

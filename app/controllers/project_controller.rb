@@ -27,6 +27,10 @@ class ProjectController < ApplicationController
     def default_engineer
       @default_engineer||= Engineer.find(1)
     end
+
+
+
+
 end 
 
     

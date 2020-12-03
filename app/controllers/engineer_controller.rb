@@ -20,6 +20,13 @@ class EngineerController < ApplicationController
   def inspectionform
   end
 
+  def engprofile
+  end
+
+
+  
+
+
 #Engineer Create Function
   def create
     engineer = Engineer.new(engineer_params) 
@@ -32,11 +39,63 @@ class EngineerController < ApplicationController
     end
 end
 
+
+def current_user
+  @current_user ||= Engineer.find(session[:engineer_id]) if session[:engineer_id]
+end 
+
+
+
+  def edit
+    @engineer = Engineer.find_by(email: engineer_params[:email])
+    end
+
+
+
+    def update
+    
+      @engineer = Engineer.find(session[:engineer_id]) if session[:engineer_id]
+      if Engineer.new(completeprofile_params)
+        @engineer.save
+        redirect_to "/engdashboard"
+      else 
+        redirect_to "/index"
+    # Handle a successful update.
+    end
+  
+end
+
+
+
+
 private 
   def engineer_params
     params.require(:engineer).permit(:email, :password, :password_confirmation)
   end
+
+
+
+
+
+
+  private 
+  def completeprofile_params
+    params.require(:engineer).permit(:seal, :fname, :lname)
+  end
+
+
+
+  
+  
+
+
+
+
 end 
+
+
+
+
 
     
 

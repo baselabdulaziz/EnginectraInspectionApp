@@ -1,29 +1,29 @@
 
   development:
-    adapter: mysql2
+    adapter: postgresql
     encoding: utf8
     reconnect: false
-    database: enginectrainspectionform
+    database: enginectrainspectionmodule
     pool: 5
-    username: root
+    username: postgres
     password: 12341234
-    socket: /opt/local/var/run/mysql5/mysqld.sock
+    
   test:
-    adapter: mysql2
+    adapter: postgresql
     encoding: utf8
     reconnect: false
-    database: enginectrainspectionform
+    database: enginectrainspectionmodule
     pool: 5
-    username: root
+    username: postgres 
     password: 12341234
-    socket: /opt/local/var/run/mysql5/mysqld.sock
+    
 
   production:
-    adapter: mysql2
+    adapter: postgresql
     encoding: utf8
     reconnect: false
-    database: enginectrainspectionform
+    database: enginectrainspectionmodule
     pool: 5
-    username: root
+    username: postgres
     password: 12341234
-    socket: /opt/local/var/run/mysql5/mysqld.sock
+    
